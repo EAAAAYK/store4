@@ -1,0 +1,289 @@
+:root {
+  --white: #fff;
+  --red: #e03131;
+  --black: #000;
+}
+* {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+/*==========================================================
+header
+==============================================================*/
+.header {
+  position: relative;
+  height: 0;
+}
+.mainvisual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-image: url(../img/mainvisual.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+}
+.mainvisual-logo {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 460px;
+  width: 100%;
+  filter: drop-shadow(1px 1px 10px #c0c0c0);
+}
+.gnav {
+  position: relative;
+  z-index: 5;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  justify-content: right;
+  gap: 30px;
+}
+.gnav__link {
+  color: var(--white);
+  font-size: 14.4px;
+  line-height: 24.4px;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 2px rgba(18, 18, 18, 1));
+  transition: all 0.3s ease;
+}
+.gnav__link:hover {
+  color: var(--red);
+}
+/*============================================================================
+main
+==============================================================================*/
+.main {
+  margin-top: calc(100vh + 20px);
+}
+.background-attch {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.background-white {
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+}
+.inner {
+  max-width: 1000px;
+  padding: 90px 16px 170px;
+  margin: 0 auto;
+}
+.section-title {
+  text-align: center;
+  font-size: 72px;
+  line-height: 122.4px;
+  color: var(--white);
+  padding: 90px 0;
+  text-shadow: 1px 1px 10px #c0c0c0;
+}
+.menu-genre,
+.about-head,
+.location-head {
+  width: fit-content;
+  margin: 0 auto 70px;
+  font-size: 40px;
+  line-height: 68px;
+  font-weight: bold;
+  border-bottom: 6px solid var(--red);
+}
+
+/*============================================================================
+menu
+=============================================================================*/
+.menu-attch {
+  background-image: url(../img/menu.jpg);
+}
+.menu-flex {
+  display: flex;
+}
+.menu-left,
+.menu-right {
+  width: 50%;
+  padding: 45px;
+}
+.menu-left {
+  border-right: 1px solid var(--black);
+}
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 24.4px;
+  font-size: 14.4px;
+}
+.menu-list__itemName {
+  width: 85%;
+  border-bottom: 1px dotted var(--black);
+  margin-bottom: 25px;
+}
+.menu-list__itemPrice {
+  width: 15%;
+  padding-top: 10px;
+  text-align: right;
+}
+.menu__other {
+  margin-top: 60px;
+}
+/*=================================================================
+about
+===================================================================*/
+.about-attch {
+  background-image: url(../img/about.jpg);
+}
+.about-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.about-text {
+  width: calc(50% - 20px);
+  font-size: 14.4px;
+  line-height: 28.8px;
+}
+.btn__readmore {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin: 60px auto 0;
+  color: var(--black);
+  cursor: pointer;
+}
+.btn__readmore::before,
+.btn__readmore::after {
+  position: absolute;
+  content: "";
+  background-color: var(--red);
+  width: 20%;
+  height: 2px;
+  transition: all 0.3s ease;
+}
+.btn__readmore:hover::before,
+.btn__readmore:hover::after {
+  /*.class:hover:before(/after)
+  クラス名に:ホバーしたときの::疑似要素*/
+  width: 100%;
+}
+.btn__readmore::before {
+  top: 0;
+  left: 0;
+}
+.btn__readmore::after {
+  bottom: 0;
+  right: 0;
+}
+.btn__readmore span::before,
+.btn__readmore span::after {
+  position: absolute;
+  content: "";
+  background-color: var(--red);
+  width: 2px;
+  height: 50%;
+  transition: all 0.3s ease;
+}
+.btn__readmore:hover span::before,
+.btn__readmore:hover span::after {
+  /*.class:hover:before(/after)
+  クラス名に:ホバーしたときの::疑似要素*/
+  height: 100%;
+}
+.btn__readmore span::before {
+  top: 0;
+  left: 0;
+}
+.btn__readmore span::after {
+  bottom: 0;
+  right: 0;
+}
+/*=========================================================================
+location
+==========================================================================*/
+.location-attch {
+  background-image: url(../img/location.jpg);
+}
+.location-map {
+  padding-bottom: 10px;
+  width: 100%;
+  height: 400px;
+  filter: grayscale(1);
+}
+.location-adress__text {
+  padding-top: 10px;
+  font-size: 14px;
+  line-height: 24.4px;
+}
+
+/*=====================================================================
+footer
+========================================================================*/
+.footer {
+  /*隙間から覗く背景画像は以下2つのプロパティで隠せる*/
+  margin-top: -1px;
+  background-color: var(--white);
+}
+.copyright {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+/*==========================================================
+responsive
+===========================================================*/
+@media screen and (max-width: 767px) {
+  .main {
+    margin-top: calc(100vh + 10px);
+  }
+  .inner {
+    padding-top: 30px;
+    padding-bottom: 105px;
+  }
+  .background-attch {
+    background-attachment: scroll;
+    height: 94px;
+  }
+  .section-title {
+    font-size: 32px;
+    line-height: 54.4px;
+    padding: 20px 0;
+  }
+  .menu-genre,
+  .about-head,
+  .location-head {
+    font-size: 20px;
+    line-height: 34px;
+    margin-bottom: 25px;
+  }
+  .menu-flex {
+    flex-direction: column;
+  }
+  .menu-left,
+  .menu-right {
+    width: 100%;
+    padding: 0;
+  }
+  .menu-left {
+    border-right: none;
+  }
+  .menu__other {
+    margin-top: 0;
+  }
+  .about-flex {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 2%;
+  }
+  .about-text {
+    width: 100%;
+  }
+}
